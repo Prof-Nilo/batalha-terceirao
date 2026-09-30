@@ -1,1 +1,1 @@
-# Batalha de Matemática Terceirão
+# Batalha de Matemática dos Terceirão
