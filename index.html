@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha de Matemática dos Terceirão - E.E. Francisco Cristiano Lima de Freitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Rustic Style (Cinzel Decorative, Playfair Display, Fira Code, Outfit) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Fira+Code:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rustic: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#78350f',
+                            800: '#451a03',
+                            900: '#270e02',
+                            950: '#170701',
+                        },
+                        parchment: {
+                            100: '#fef8ea',
+                            200: '#fbf0d5',
+                            300: '#f5dfad',
+                            800: '#2b1e16',
+                            900: '#1c120c',
+                        }
+                    },
+                    fontFamily: {
+                        rusticTitle: ['"Cinzel Decorative"', 'serif'],
+                        rusticText: ['"Playfair Display"', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #170701;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(120, 53, 15, 0.25) 0%, transparent 70%),
+                radial-gradient(#270e02 1.5px, transparent 1.5px);
+            background-size: 100% 100%, 24px 24px;
+        }
+
+        .rustic-card {
+            background: linear-gradient(145deg, rgba(39, 14, 2, 0.95), rgba(23, 7, 1, 0.98));
+            border: 2px solid #b45309;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(254, 243, 199, 0.15);
+        }
+
+        .parchment-box {
+            background: linear-gradient(135deg, #fef8ea 0%, #f5dfad 100%);
+            color: #270e02;
+            box-shadow: inset 0 0 15px rgba(120, 53, 15, 0.25), 0 4px 12px rgba(0,0,0,0.5);
+            border: 1px solid #d97706;
+        }
+
+        @keyframes gold-shine {
+            0% { filter: drop-shadow(0 0 2px rgba(251, 191, 36, 0.4)); }
+            50% { filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.8)); }
+            100% { filter: drop-shadow(0 0 2px rgba(251, 191, 36, 0.4)); }
+        }
+
+        .animate-gold-shine {
+            animation: gold-shine 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-amber-100 min-h-screen font-sans antialiased flex flex-col justify-between selection:bg-amber-600 selection:text-white">
+
+    <!-- CABEÇALHO RÚSTICO COM LOGO EMBLEMA DA CORUJA E NOME DA ESCOLA -->
+    <header class="w-full bg-rustic-950/95 border-b-2 border-amber-700/80 sticky top-0 z-50 py-3 sm:py-4 px-4 shadow-2xl backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6">
+            
+            <!-- Canto Esquerdo Superior: Logo Rústico da Coruja com Capelo, Livro e Moldura Dourada -->
+            <div class="flex items-center space-x-3.5 self-start sm:self-center">
+                <div class="relative group shrink-0">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-amber-950/80 p-1 border-2 border-amber-500 shadow-xl flex items-center justify-center animate-gold-shine overflow-hidden">
+                        <svg viewBox="0 0 200 200" class="w-full h-full transform transition group-hover:scale-105 duration-300">
+                            <!-- Moldura Dourada Rústica -->
+                            <circle cx="100" cy="100" r="92" fill="#270e02" stroke="#fbbf24" stroke-width="6"/>
+                            <circle cx="100" cy="100" r="82" fill="none" stroke="#b45309" stroke-width="3" stroke-dasharray="6 4"/>
+                            
+                            <!-- Livro Aberto -->
+                            <path d="M 40 140 Q 100 125 100 155 Q 100 125 160 140 L 155 160 Q 100 145 100 170 Q 100 145 45 160 Z" fill="#fef8ea" stroke="#78350f" stroke-width="2.5"/>
+                            <path d="M 45 145 Q 100 132 100 158" fill="none" stroke="#d97706" stroke-width="1.5"/>
+                            <path d="M 155 145 Q 100 132 100 158" fill="none" stroke="#d97706" stroke-width="1.5"/>
+
+                            <!-- Corpo da Coruja -->
+                            <ellipse cx="100" cy="105" rx="36" ry="42" fill="#b45309" stroke="#451a03" stroke-width="2"/>
+                            <ellipse cx="100" cy="112" rx="22" ry="28" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+                            <path d="M 90 100 Q 100 106 110 100 M 88 112 Q 100 118 112 112 M 90 124 Q 100 130 110 124" fill="none" stroke="#78350f" stroke-width="1.5"/>
+
+                            <!-- Olhos da Coruja -->
+                            <circle cx="83" cy="88" r="14" fill="#fef3c7" stroke="#451a03" stroke-width="2"/>
+                            <circle cx="117" cy="88" r="14" fill="#fef3c7" stroke="#451a03" stroke-width="2"/>
+                            <circle cx="83" cy="88" r="7" fill="#170701"/>
+                            <circle cx="117" cy="88" r="7" fill="#170701"/>
+                            <circle cx="85" cy="86" r="2.5" fill="#ffffff"/>
+                            <circle cx="119" cy="86" r="2.5" fill="#ffffff"/>
+
+                            <!-- Bico -->
+                            <polygon points="100,92 94,102 106,102" fill="#fbbf24" stroke="#78350f" stroke-width="1.5"/>
+
+                            <!-- Capelo de Formatura -->
+                            <polygon points="100,42 148,58 100,72 52,58" fill="#170701" stroke="#fbbf24" stroke-width="2"/>
+                            <rect x="80" y="66" width="40" height="12" fill="#270e02" rx="3"/>
+                            <path d="M 140 60 L 152 78" stroke="#fbbf24" stroke-width="2.5"/>
+                            <circle cx="152" cy="80" r="3.5" fill="#fbbf24"/>
+
+                            <!-- Ramos Dourados -->
+                            <path d="M 25 100 Q 20 60 45 40 Q 35 70 30 100 Z" fill="#d97706"/>
+                            <path d="M 175 100 Q 180 60 155 40 Q 165 70 170 100 Z" fill="#d97706"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="text-amber-400 font-rusticText font-bold italic tracking-wide text-xs sm:text-sm drop-shadow-md">
+                        E.E. Francisco Cristiano Lima de Freitas
+                    </span>
+                    <span class="text-[10px] sm:text-xs text-amber-200/70 font-semibold tracking-wider uppercase">
+                        PEI • Tradição e Excelência em Exatas
+                    </span>
+                </div>
+            </div>
+
+            <!-- Título Principal Centralizado -->
+            <div class="text-center flex-grow">
+                <div class="inline-flex items-center space-x-2 bg-amber-950/80 px-3 py-0.5 rounded-full border border-amber-600/50 text-amber-300 text-[11px] font-semibold mb-1 shadow-inner">
+                    <i class="fa-solid fa-scroll text-amber-400"></i>
+                    <span>EM13MAT314 • AE8</span>
+                </div>
+                <!-- Nome da escola acima do título principal -->
+                <h2 class="text-xs sm:text-sm font-rusticText font-bold text-amber-300 uppercase tracking-widest block text-center opacity-90">
+                    E.E. Francisco Cristiano Lima de Freitas
+                </h2>
+                <h1 class="text-xl sm:text-3xl md:text-4xl font-rusticTitle font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 tracking-tight drop-shadow-lg text-center">
+                    Batalha de Matemática dos Terceirão
+                </h1>
+            </div>
+
+            <div class="hidden md:block w-24"></div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL RÚSTICO -->
+    <main class="max-w-5xl mx-auto w-full p-3 sm:p-6 flex-grow">
+
+        <!-- PAINEL DE CONFIGURAÇÕES DE RODADA DA BATALHA -->
+        <div class="rustic-card rounded-2xl p-4 mb-5 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Seletor de Categoria/Conteúdo -->
+            <div class="w-full md:w-auto">
+                <label for="categoryFilter" class="block text-xs font-rusticText font-bold text-amber-300 mb-1">
+                    <i class="fa-solid fa-compass text-amber-400 mr-1"></i> Tópico de Matemática:
+                </label>
+                <select id="categoryFilter" class="bg-rustic-900 text-amber-100 text-xs sm:text-sm rounded-xl border border-amber-600/80 p-2.5 w-full md:w-72 focus:ring-2 focus:ring-amber-400 focus:outline-none shadow-inner font-semibold">
+                    <option value="ALL">Todas as Áreas (100 Questões)</option>
+                    <option value="VELOCITY">1. Velocidade Média (vm = Δs / Δt)</option>
+                    <option value="RATIO">2. Grandezas por Razão (Densidade/Consumo)</option>
+                    <option value="PRODUCT">3. Grandezas por Produto (Trabalho/Energia)</option>
+                    <option value="RULE3_SIMPLE">4. Regra de Três Simples</option>
+                    <option value="RULE3_COMP">5. Regra de Três Composta</option>
+                </select>
+            </div>
+
+            <!-- Seletor de Quantidade por Rodada (10 em 10) -->
+            <div class="w-full md:w-auto">
+                <label for="roundLengthSelect" class="block text-xs font-rusticText font-bold text-amber-300 mb-1">
+                    <i class="fa-solid fa-list-ol text-amber-400 mr-1"></i> Pergunta(s) por Rodada:
+                </label>
+                <select id="roundLengthSelect" class="bg-rustic-900 text-amber-100 text-xs sm:text-sm rounded-xl border border-amber-600/80 p-2.5 w-full md:w-56 focus:ring-2 focus:ring-amber-400 focus:outline-none shadow-inner font-semibold">
+                    <option value="10" selected>10 Questões</option>
+                    <option value="20">20 Questões</option>
+                    <option value="30">30 Questões</option>
+                    <option value="40">40 Questões</option>
+                    <option value="50">50 Questões</option>
+                    <option value="60">60 Questões</option>
+                    <option value="70">70 Questões</option>
+                    <option value="80">80 Questões</option>
+                    <option value="90">90 Questões</option>
+                    <option value="100">100 Questões (Rodada Completa)</option>
+                </select>
+            </div>
+
+            <!-- Placar de Progresso da Rodada -->
+            <div class="flex items-center justify-around w-full md:w-auto gap-4 text-center border-t md:border-t-0 border-amber-900/80 pt-3 md:pt-0">
+                <div>
+                    <span class="block text-[10px] text-amber-300/80 font-bold uppercase tracking-wider">Progresso</span>
+                    <span id="currentQuestionNum" class="text-base sm:text-lg font-bold text-amber-400 font-mono">0 / 10</span>
+                </div>
+                <div class="h-8 w-px bg-amber-800/80"></div>
+                <div>
+                    <span class="block text-[10px] text-amber-300/80 font-bold uppercase tracking-wider">Pontuação</span>
+                    <span id="scoreDisplay" class="text-base sm:text-lg font-bold text-emerald-400 font-mono">0 pts</span>
+                </div>
+                <div class="h-8 w-px bg-amber-800/80"></div>
+                <div>
+                    <span class="block text-[10px] text-amber-300/80 font-bold uppercase tracking-wider">Precisão</span>
+                    <span id="accuracyDisplay" class="text-base sm:text-lg font-bold text-amber-300 font-mono">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BARRA DE PROGRESSO DA RODADA -->
+        <div class="w-full bg-rustic-950 h-3 rounded-full overflow-hidden mb-6 border border-amber-700/60 p-0.5 shadow-inner">
+            <div id="progressBar" class="bg-gradient-to-r from-amber-600 via-amber-400 to-yellow-300 h-full w-0 rounded-full transition-all duration-300 shadow-lg"></div>
+        </div>
+
+        <!-- CARD DA PERGUNTA -->
+        <div class="rustic-card rounded-3xl p-5 sm:p-8 shadow-2xl relative overflow-hidden border-2 border-amber-600/80">
+            
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span id="topicBadge" class="bg-amber-900/80 text-amber-300 border border-amber-500/50 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Carregando...
+                </span>
+                <button id="btnHint" onclick="toggleHintModal()" class="bg-amber-950 hover:bg-amber-900 text-amber-300 border border-amber-500/80 text-xs font-rusticText font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 transition shadow-md hover:scale-105">
+                    <i class="fa-solid fa-lightbulb text-amber-400 animate-pulse"></i>
+                    <span>💡 Pedir Dica de Ouro</span>
+                </button>
+            </div>
+
+            <!-- Caixinha de Dica Pedagógica -->
+            <div id="hintBox" class="hidden mb-4 p-3.5 parchment-box rounded-xl text-rustic-900 text-xs sm:text-sm font-rusticText font-semibold flex items-start gap-2.5 border-l-4 border-amber-700 shadow-lg animate-fade-in">
+                <i class="fa-solid fa-scroll text-amber-800 text-lg shrink-0 mt-0.5"></i>
+                <div>
+                    <span class="font-bold text-amber-950 block mb-0.5">Dica Pedagógica da Batalha:</span>
+                    <span id="hintContent">---</span>
+                </div>
+            </div>
+
+            <!-- ENUNCIADO DA PERGUNTA -->
+            <div class="min-h-[80px] flex items-center mb-6">
+                <h2 id="questionText" class="text-lg sm:text-xl md:text-2xl font-rusticText font-bold text-amber-100 leading-relaxed drop-shadow">
+                    Carregando a pergunta da batalha...
+                </h2>
+            </div>
+
+            <!-- OPÇÕES (A, B, C, D) -->
+            <div id="optionsContainer" class="grid grid-cols-1 gap-3.5 mb-6">
+                <!-- Opções inseridas dinamicamente via JS -->
+            </div>
+
+            <!-- PAINEL DE RESOLUÇÃO PASSO A PASSO E CANVAS ANIMADO QUE PARA NO DESTINO -->
+            <div id="feedbackPanel" class="hidden mt-6 p-5 sm:p-6 rounded-2xl border transition-all duration-300">
+                
+                <div class="flex items-center space-x-3 mb-4">
+                    <div id="feedbackIcon" class="w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0"></div>
+                    <div>
+                        <h3 id="feedbackTitle" class="text-base sm:text-lg font-rusticText font-bold"></h3>
+                        <p id="feedbackSubtitle" class="text-xs text-amber-200/80"></p>
+                    </div>
+                </div>
+
+                <!-- PASSO A PASSO COM DADOS REALÍSTICOS DA PERGUNTA -->
+                <div id="stepByStepBox" class="hidden parchment-box p-4 sm:p-5 rounded-xl border-2 border-amber-700 mb-5 text-sm leading-relaxed shadow-2xl">
+                    <h4 class="font-bold font-rusticText text-amber-900 text-base mb-3 flex items-center gap-2 border-b border-amber-800/30 pb-2">
+                        <i class="fa-solid fa-scroll text-amber-800"></i> Resolução Passo a Passo com Números da Questão:
+                    </h4>
+                    <div id="stepByStepContent" class="space-y-2.5 font-mono text-xs sm:text-sm text-rustic-900 font-semibold"></div>
+                </div>
+
+                <!-- CANVAS ANIMADO COM MOVIMENTO E PARADA NO DESTINO FINAL -->
+                <div id="visualDemoBox" class="hidden bg-rustic-950 p-4 sm:p-5 rounded-xl border border-amber-600/60 text-sm shadow-inner">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-bold font-rusticText text-amber-300 flex items-center gap-2">
+                            <i id="animStatusIcon" class="fa-solid fa-circle-play text-amber-400 animate-pulse"></i>
+                            <span id="animStatusTitle">Demonstração Visual Proporcional:</span>
+                        </h4>
+                        <button onclick="replayCurrentAnimation()" class="text-xs bg-amber-900/80 hover:bg-amber-800 text-amber-200 border border-amber-500/50 px-3 py-1 rounded-lg flex items-center gap-1.5 transition font-semibold">
+                            <i class="fa-solid fa-rotate-right"></i> Repetir Animação
+                        </button>
+                    </div>
+                    <p id="visualText" class="text-amber-200/90 text-xs sm:text-sm mb-3 font-medium bg-rustic-900/80 p-2.5 rounded-lg border border-amber-800/60"></p>
+                    
+                    <div class="relative w-full h-64 sm:h-72 bg-rustic-900 rounded-xl overflow-hidden border-2 border-amber-700/80 flex items-center justify-center shadow-2xl">
+                        <canvas id="demoCanvas" class="w-full h-full block"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTROLES DE NAVEGAÇÃO -->
+            <div class="mt-8 flex items-center justify-end pt-4 border-t border-amber-900/80">
+                <button id="btnNext" disabled onclick="nextQuestion()" class="bg-rustic-900 text-amber-700/50 cursor-not-allowed font-rusticText font-bold px-6 py-3 rounded-xl shadow-lg flex items-center space-x-2 transition-all duration-200 border border-amber-900">
+                    <span>Próxima Pergunta</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer class="w-full text-center py-4 text-xs text-amber-400/70 border-t border-amber-900/80 bg-rustic-950 mt-8 font-rusticText">
+        <p>E.E. Francisco Cristiano Lima de Freitas • Batalha de Matemática dos Terceirão • EM13MAT314</p>
+    </footer>
+
+    <script>
+        // GERADOR DE BANCO DE 100 QUESTÕES
+        function generate100Questions() {
+            const list = [];
+
+            // 1. VELOCIDADE MÉDIA (20 Questões)
+            for (let i = 1; i <= 20; i++) {
+                const distance = 80 + i * 25; 
+                const hours = 1 + (i % 4) * 0.5 + (i > 10 ? 1 : 0); 
+                const speed = Math.round((distance / hours) * 10) / 10;
+
+                if (i % 2 === 0) {
+                    const newSpeed = Math.round(speed * 1.25);
+                    const newHours = Math.round((distance / newSpeed) * 10) / 10;
+
+                    list.push({
+                        id: i,
+                        category: 'VELOCITY',
+                        categoryName: 'Velocidade Média',
+                        question: `Um caminhão de transporte da região de Francisco Cristiano percorreu ${distance} km. Mantendo uma velocidade constante de ${newSpeed} km/h, quanto tempo ele levou para atingir o destino final?`,
+                        options: [
+                            `${newHours} horas`,
+                            `${(newHours * 1.4).toFixed(1)} horas`,
+                            `${(newHours + 1.2).toFixed(1)} horas`,
+                            `${(newHours * 0.75).toFixed(1)} horas`
+                        ],
+                        answer: 0,
+                        hint: `Use a fórmula do tempo decorrido: Δt = Δs / v_m. Divida o deslocamento (${distance} km) pela velocidade (${newSpeed} km/h).`,
+                        steps: [
+                            `1. Dados: Deslocamento (Δs) = ${distance} km | Velocidade (v_m) = ${newSpeed} km/h.`,
+                            `2. Fórmula do tempo: Δt = Δs / v_m.`,
+                            `3. Cálculo exato: Δt = ${distance} / ${newSpeed} = ${newHours} horas.`
+                        ],
+                        visualType: 'VELOCITY_ANIMATED',
+                        exactData: { dist: distance, speed: newSpeed, time: newHours, unitDist: 'km', unitTime: 'h', unitSpeed: 'km/h', label: 'Caminhão de Transporte' }
+                    });
+                } else {
+                    list.push({
+                        id: i,
+                        category: 'VELOCITY',
+                        categoryName: 'Velocidade Média',
+                        question: `Um ônibus de excursão escolar da E.E. Francisco Cristiano realiza uma viagem de ${distance} km em exatas ${hours} horas. Qual é a velocidade média do trajeto?`,
+                        options: [
+                            `${(speed - 12).toFixed(1)} km/h`,
+                            `${speed} km/h`,
+                            `${(speed + 15.5).toFixed(1)} km/h`,
+                            `${(speed * 1.3).toFixed(1)} km/h`
+                        ],
+                        answer: 1,
+                        hint: `A velocidade média é a razão entre a distância total percorrida e o tempo total: v_m = Δs / Δt.`,
+                        steps: [
+                            `1. Dados: Distância (Δs) = ${distance} km; Tempo (Δt) = ${hours} h.`,
+                            `2. Fórmula: v_m = Δs / Δt.`,
+                            `3. Resolução: v_m = ${distance} / ${hours} = ${speed} km/h.`
+                        ],
+                        visualType: 'VELOCITY_ANIMATED',
+                        exactData: { dist: distance, speed: speed, time: hours, unitDist: 'km', unitTime: 'h', unitSpeed: 'km/h', label: 'Ônibus de Excursão' }
+                    });
+                }
+            }
+
+            // 2. GRANDEZAS POR RAZÃO (20 Questões)
+            for (let i = 1; i <= 20; i++) {
+                if (i % 3 === 0) {
+                    const pop = 80000 + i * 35000;
+                    const area = 400 + i * 50;
+                    const den = Math.round((pop / area) * 10) / 10;
+                    list.push({
+                        id: 20 + i,
+                        category: 'RATIO',
+                        categoryName: 'Grandezas por Razão',
+                        question: `Um município da região possui população de ${pop.toLocaleString('pt-BR')} habitantes em uma área territorial de ${area} km². Qual é a densidade demográfica dessa região?`,
+                        options: [
+                            `${(den * 0.65).toFixed(1)} hab/km²`,
+                            `${den} hab/km²`,
+                            `${(den * 1.35).toFixed(1)} hab/km²`,
+                            `${(den + 45).toFixed(1)} hab/km²`
+                        ],
+                        answer: 1,
+                        hint: `Densidade Demográfica é a razão entre o número de habitantes e a área territorial (D = População / Área).`,
+                        steps: [
+                            `1. Razão da Densidade Demográfica: D = População / Área.`,
+                            `2. D = ${pop} habitantes / ${area} km².`,
+                            `3. Resultado: D = ${den} hab/km².`
+                        ],
+                        visualType: 'RATIO_ANIMATED',
+                        exactData: { valA: pop, labelA: 'Habitantes', valB: area, labelB: 'Área (km²)', result: den, resultUnit: 'hab/km²' }
+                    });
+                } else if (i % 2 === 0) {
+                    const dist = 180 + i * 22;
+                    const liters = 15 + i * 1.8;
+                    const kmL = Math.round((dist / liters) * 10) / 10;
+                    list.push({
+                        id: 20 + i,
+                        category: 'RATIO',
+                        categoryName: 'Grandezas por Razão',
+                        question: `Um carro de passeio percorre ${dist} km utilizando ${liters.toFixed(1)} litros de combustível. Determine o consumo médio em km/L.`,
+                        options: [
+                            `${kmL} km/L`,
+                            `${(kmL * 0.75).toFixed(1)} km/L`,
+                            `${(kmL + 2.8).toFixed(1)} km/L`,
+                            `${(dist / 10).toFixed(1)} km/L`
+                        ],
+                        answer: 0,
+                        hint: `O consumo médio mede quantos quilômetros o veículo roda por litro: Consumo = Distância / Litros.`,
+                        steps: [
+                            `1. O Consumo é o quociente entre Distância e Litros consumidos.`,
+                            `2. C = ${dist} km / ${liters.toFixed(1)} L.`,
+                            `3. Consumo médio: C = ${kmL} km/L.`
+                        ],
+                        visualType: 'RATIO_ANIMATED',
+                        exactData: { valA: dist, labelA: 'Distância (km)', valB: liters, labelB: 'Combustível (L)', result: kmL, resultUnit: 'km/L' }
+                    });
+                } else {
+                    const mass = 150 + i * 25;
+                    const vol = 20 + i * 3;
+                    const density = Math.round((mass / vol) * 100) / 100;
+                    list.push({
+                        id: 20 + i,
+                        category: 'RATIO',
+                        categoryName: 'Grandezas por Razão',
+                        question: `No laboratório da escola, um corpo maciço possui massa de ${mass} g e volume de ${vol} cm³. Qual a sua densidade absoluta?`,
+                        options: [
+                            `${(density * 1.5).toFixed(2)} g/cm³`,
+                            `${(density * 0.7).toFixed(2)} g/cm³`,
+                            `${density} g/cm³`,
+                            `${(density + 2.5).toFixed(2)} g/cm³`
+                        ],
+                        answer: 2,
+                        hint: `Densidade absoluta é a relação dada por: d = massa / volume.`,
+                        steps: [
+                            `1. Fórmula da densidade: d = massa / volume.`,
+                            `2. d = ${mass} g / ${vol} cm³.`,
+                            `3. Densidade final: d = ${density} g/cm³.`
+                        ],
+                        visualType: 'RATIO_ANIMATED',
+                        exactData: { valA: mass, labelA: 'Massa (g)', valB: vol, labelB: 'Volume (cm³)', result: density, resultUnit: 'g/cm³' }
+                    });
+                }
+            }
+
+            // 3. GRANDEZAS POR PRODUTO (20 Questões)
+            for (let i = 1; i <= 20; i++) {
+                if (i % 2 === 0) {
+                    const force = 40 + i * 15;
+                    const dist = 5 + i * 2;
+                    const work = force * dist;
+                    list.push({
+                        id: 40 + i,
+                        category: 'PRODUCT',
+                        categoryName: 'Grandezas por Produto',
+                        question: `Uma força constante de ${force} N atua sobre um bloco deslocando-o por ${dist} metros. Qual o trabalho mecânico realizado pela força?`,
+                        options: [
+                            `${work / 2} Joules`,
+                            `${work} Joules`,
+                            `${work + 150} Joules`,
+                            `${(force / dist).toFixed(1)} Joules`
+                        ],
+                        answer: 1,
+                        hint: `O Trabalho Mecânico é uma grandeza dada pelo PRODUTO da Força pelo Deslocamento (W = F × d).`,
+                        steps: [
+                            `1. Trabalho é obtido multiplicando Força por Deslocamento: W = F × d.`,
+                            `2. W = ${force} N × ${dist} m.`,
+                            `3. Trabalho: W = ${work} Joules (J).`
+                        ],
+                        visualType: 'PRODUCT_ANIMATED',
+                        exactData: { valA: force, labelA: 'Força (N)', valB: dist, labelB: 'Distância (m)', result: work, resultUnit: 'Joules (J)' }
+                    });
+                } else {
+                    const power = 300 + i * 50;
+                    const hours = 2 + (i % 6);
+                    const energy = (power * hours) / 1000;
+                    list.push({
+                        id: 40 + i,
+                        category: 'PRODUCT',
+                        categoryName: 'Grandezas por Produto',
+                        question: `Um equipamento da escola com potência de ${power} W permanece ligado por ${hours} horas. Determine a energia elétrica consumida em kWh.`,
+                        options: [
+                            `${energy.toFixed(2)} kWh`,
+                            `${(energy * 10).toFixed(2)} kWh`,
+                            `${(energy / 2).toFixed(2)} kWh`,
+                            `${(power * hours).toFixed(0)} kWh`
+                        ],
+                        answer: 0,
+                        hint: `Energia elétrica é o produto da potência pelo tempo de uso (E = P × t). Lembre-se de dividir por 1000 para converter Watts para kiloWatts.`,
+                        steps: [
+                            `1. O Consumo de Energia é dado por: E = Potência × Tempo.`,
+                            `2. E = ${power} W × ${hours} h = ${power * hours} Wh.`,
+                            `3. Convertendo para kWh: E = ${power * hours} / 1000 = ${energy.toFixed(2)} kWh.`
+                        ],
+                        visualType: 'PRODUCT_ANIMATED',
+                        exactData: { valA: power, labelA: 'Potência (W)', valB: hours, labelB: 'Tempo (h)', result: energy, resultUnit: 'kWh' }
+                    });
+                }
+            }
+
+            // 4. REGRA DE TRÊS SIMPLES (20 Questões)
+            for (let i = 1; i <= 20; i++) {
+                if (i % 2 === 0) {
+                    const workers1 = 4 + (i % 5);
+                    const days1 = 12 + i;
+                    const workers2 = workers1 + 2;
+                    const days2 = Math.round((workers1 * days1) / workers2 * 10) / 10;
+                    list.push({
+                        id: 60 + i,
+                        category: 'RULE3_SIMPLE',
+                        categoryName: 'Regra de Três Simples',
+                        question: `Uma equipe de ${workers1} estudantes organiza um evento em ${days1} dias. Se a equipe passar a ter ${workers2} integrantes de mesmo ritmo, em quantos dias o evento ficará pronto?`,
+                        options: [
+                            `${days2} dias`,
+                            `${(days2 * 1.4).toFixed(1)} dias`,
+                            `${(days1 + 4)} dias`,
+                            `${(days2 * 0.6).toFixed(1)} dias`
+                        ],
+                        answer: 0,
+                        hint: `Atenção: Aumentar o número de integrantes diminui o número de dias necessários. As grandezas são INVERSAMENTE proporcionais!`,
+                        steps: [
+                            `1. Grandezas INVERSAMENTE proporcionais: Mais alunos = menos dias.`,
+                            `2. Relação: Integrantes_1 × Dias_1 = Integrantes_2 × X.`,
+                            `3. Cálculo: ${workers1} × ${days1} = ${workers2} × X  ⇒  X = ${days2} dias.`
+                        ],
+                        visualType: 'RULE3_SIMP_ANIMATED',
+                        exactData: { g1Name: 'Integrantes', a1: workers1, a2: workers2, g2Name: 'Dias', b1: days1, b2: days2, isInverse: true }
+                    });
+                } else {
+                    const kg1 = 6 + i;
+                    const price1 = kg1 * 18;
+                    const kg2 = kg1 + 4;
+                    const price2 = (price1 / kg1) * kg2;
+                    list.push({
+                        id: 60 + i,
+                        category: 'RULE3_SIMPLE',
+                        categoryName: 'Regra de Três Simples',
+                        question: `Para um projeto escolar, ${kg1} kg de material reciclável custaram R$ ${price1},00. Quanto custará adquirir ${kg2} kg do mesmo material?`,
+                        options: [
+                            `R$ ${(price2 - 20).toFixed(2)}`,
+                            `R$ ${price2.toFixed(2)}`,
+                            `R$ ${(price2 * 1.25).toFixed(2)}`,
+                            `R$ ${(price1 * 2).toFixed(2)}`
+                        ],
+                        answer: 1,
+                        hint: `Aumentar a massa adquirida aumenta o preço total. São grandezas DIRETAMENTE proporcionais (monte a proporção normal).`,
+                        steps: [
+                            `1. Grandezas DIRETAMENTE proporcionais: Mais massa = maior preço.`,
+                            `2. Proporção: ${kg1} / ${kg2} = ${price1} / X.`,
+                            `3. Regra de três: X = (${kg2} × ${price1}) / ${kg1} = R$ ${price2.toFixed(2)}.`
+                        ],
+                        visualType: 'RULE3_SIMP_ANIMATED',
+                        exactData: { g1Name: 'Massa (kg)', a1: kg1, a2: kg2, g2Name: 'Custo (R$)', b1: price1, b2: price2, isInverse: false }
+                    });
+                }
+            }
+
+            // 5. REGRA DE TRÊS COMPOSTA (20 Questões)
+            for (let i = 1; i <= 20; i++) {
+                const mac1 = 4 + (i % 4);
+                const hrs1 = 6;
+                const prod1 = 200 + i * 30;
+                const mac2 = mac1 + 2;
+                const hrs2 = 8;
+                const prod2 = Math.round((prod1 * mac2 * hrs2) / (mac1 * hrs1));
+
+                list.push({
+                    id: 80 + i,
+                    category: 'RULE3_COMP',
+                    categoryName: 'Regra de Três Composta',
+                    question: `Na gráfica, ${mac1} impressoras trabalhando ${hrs1} horas/dia imprimem ${prod1} livros. Quantos livros serão impressos por ${mac2} impressoras operando ${hrs2} horas/dia?`,
+                    options: [
+                        `${prod2} livros`,
+                        `${prod2 - 80} livros`,
+                        `${Math.round(prod2 * 1.35)} livros`,
+                        `${Math.round(prod2 * 0.7)} livros`
+                    ],
+                    answer: 0,
+                    hint: `Compare cada grandeza com a incógnita (livros): Mais impressoras produzem mais livros (direta); Mais horas/dia produzem mais livros (direta). Multiplique as razões!`,
+                    steps: [
+                        `1. Analisando as razões em relação aos Livros: Impressoras (Direta) e Horas/dia (Direta).`,
+                        `2. Equação: (${prod1} / X) = (${mac1} / ${mac2}) × (${hrs1} / ${hrs2}).`,
+                        `3. Resolução: X = (${prod1} × ${mac2} × ${hrs2}) / (${mac1} × ${hrs1}) = ${prod2} livros.`
+                    ],
+                    visualType: 'RULE3_COMP_ANIMATED',
+                    exactData: { 
+                        g1Name: 'Impressoras', g1v1: mac1, g1v2: mac2,
+                        g2Name: 'Horas/dia', g2v1: hrs1, g2v2: hrs2,
+                        g3Name: 'Livros', g3v1: prod1, g3v2: prod2
+                    }
+                });
+            }
+
+            return list;
+        }
+
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        const ALL_QUESTIONS = generate100Questions();
+        let currentRoundQueue = [];
+        let currentIndex = 0;
+        let score = 0;
+        let totalAnswered = 0;
+        let correctAnswers = 0;
+        let optionSelected = false;
+
+        let animationFrameId = null;
+        let animationProgress = 0;
+
+        // DOM Elements
+        const categoryFilter = document.getElementById('categoryFilter');
+        const roundLengthSelect = document.getElementById('roundLengthSelect');
+        const currentQuestionNum = document.getElementById('currentQuestionNum');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const accuracyDisplay = document.getElementById('accuracyDisplay');
+        const progressBar = document.getElementById('progressBar');
+        const topicBadge = document.getElementById('topicBadge');
+        const questionText = document.getElementById('questionText');
+        const optionsContainer = document.getElementById('optionsContainer');
+        const feedbackPanel = document.getElementById('feedbackPanel');
+        const feedbackIcon = document.getElementById('feedbackIcon');
+        const feedbackTitle = document.getElementById('feedbackTitle');
+        const feedbackSubtitle = document.getElementById('feedbackSubtitle');
+        const stepByStepBox = document.getElementById('stepByStepBox');
+        const stepByStepContent = document.getElementById('stepByStepContent');
+        const visualDemoBox = document.getElementById('visualDemoBox');
+        const visualText = document.getElementById('visualText');
+        const demoCanvas = document.getElementById('demoCanvas');
+        const btnNext = document.getElementById('btnNext');
+        const animStatusIcon = document.getElementById('animStatusIcon');
+        const animStatusTitle = document.getElementById('animStatusTitle');
+        const hintBox = document.getElementById('hintBox');
+        const hintContent = document.getElementById('hintContent');
+
+        function initRound() {
+            const cat = categoryFilter.value;
+            const targetLength = parseInt(roundLengthSelect.value) || 10;
+            
+            let pool = (cat === 'ALL') ? ALL_QUESTIONS : ALL_QUESTIONS.filter(q => q.category === cat);
+            const shuffledPool = shuffleArray(pool);
+            
+            // Recorta a fila conforme o número de questões por rodada escolhido (ex: 10, 20...)
+            currentRoundQueue = shuffledPool.slice(0, Math.min(targetLength, shuffledPool.length));
+            currentIndex = 0;
+            score = 0;
+            totalAnswered = 0;
+            correctAnswers = 0;
+
+            scoreDisplay.innerText = "0 pts";
+            accuracyDisplay.innerText = "0%";
+        }
+
+        categoryFilter.addEventListener('change', () => {
+            initRound();
+            loadQuestion();
+        });
+
+        roundLengthSelect.addEventListener('change', () => {
+            initRound();
+            loadQuestion();
+        });
+
+        function stopCurrentAnimation() {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+            animationProgress = 0;
+        }
+
+        function toggleHintModal() {
+            const currentQ = currentRoundQueue[currentIndex];
+            if (!currentQ) return;
+
+            if (hintBox.classList.contains('hidden')) {
+                hintContent.innerText = currentQ.hint;
+                hintBox.classList.remove('hidden');
+            } else {
+                hintBox.classList.add('hidden');
+            }
+        }
+
+        function loadQuestion() {
+            stopCurrentAnimation();
+            optionSelected = false;
+            hintBox.classList.add('hidden');
+
+            btnNext.disabled = true;
+            btnNext.className = "bg-rustic-900 text-amber-700/50 cursor-not-allowed font-rusticText font-bold px-6 py-3 rounded-xl shadow-lg flex items-center space-x-2 transition-all duration-200 border border-amber-900";
+
+            feedbackPanel.classList.add('hidden');
+            stepByStepBox.classList.add('hidden');
+            visualDemoBox.classList.add('hidden');
+
+            if (currentIndex >= currentRoundQueue.length) {
+                alert(`🎉 FIM DA RODADA!\n\nEscola: E.E. Francisco Cristiano Lima de Freitas\nQuestões Respondidas: ${currentRoundQueue.length}\nPontuação Final: ${score} pts\nPrecisão: ${Math.round((correctAnswers / totalAnswered) * 100)}%`);
+                initRound();
+            }
+
+            const currentQ = currentRoundQueue[currentIndex];
+            
+            currentQuestionNum.innerText = `${currentIndex + 1} / ${currentRoundQueue.length}`;
+            const pct = ((currentIndex) / currentRoundQueue.length) * 100;
+            progressBar.style.width = `${pct}%`;
+
+            topicBadge.innerText = currentQ.categoryName;
+            questionText.innerText = `${currentIndex + 1}. ${currentQ.question}`;
+
+            optionsContainer.innerHTML = '';
+            const labels = ['A', 'B', 'C', 'D'];
+
+            currentQ.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-rustic-900/80 hover:bg-rustic-800 border-2 border-amber-700/60 hover:border-amber-400 transition-all duration-200 flex items-center space-x-3 text-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-400 group shadow-md";
+                btn.onclick = () => handleAnswer(idx);
+
+                btn.innerHTML = `
+                    <span class="w-8 h-8 rounded-lg bg-rustic-950 text-amber-400 font-rusticText font-bold flex items-center justify-center border border-amber-600 flex-shrink-0 group-hover:border-amber-300 transition-colors">
+                        ${labels[idx]}
+                    </span>
+                    <span class="text-sm sm:text-base font-medium font-rusticText">${opt}</span>
+                `;
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function handleAnswer(selectedIdx) {
+            if (optionSelected) return;
+            optionSelected = true;
+
+            const currentQ = currentRoundQueue[currentIndex];
+            const isCorrect = selectedIdx === currentQ.answer;
+
+            totalAnswered++;
+            if (isCorrect) {
+                score += 100;
+                correctAnswers++;
+            }
+
+            scoreDisplay.innerText = `${score} pts`;
+            const acc = Math.round((correctAnswers / totalAnswered) * 100);
+            accuracyDisplay.innerText = `${acc}%`;
+
+            const buttons = optionsContainer.children;
+            for(let i = 0; i < buttons.length; i++) {
+                buttons[i].onclick = null;
+                buttons[i].classList.remove('hover:bg-rustic-800', 'hover:border-amber-400');
+
+                if (i === currentQ.answer) {
+                    buttons[i].className = "w-full text-left p-4 rounded-xl bg-emerald-950/90 border-2 border-emerald-500 text-emerald-200 font-semibold flex items-center space-x-3 shadow-lg shadow-emerald-950/50";
+                } else if (i === selectedIdx && !isCorrect) {
+                    buttons[i].className = "w-full text-left p-4 rounded-xl bg-rose-950/90 border-2 border-rose-500 text-rose-200 flex items-center space-x-3 shadow-lg shadow-rose-950/50";
+                } else {
+                    buttons[i].className += " opacity-40";
+                }
+            }
+
+            btnNext.disabled = false;
+            btnNext.className = "bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 hover:from-amber-500 hover:to-yellow-400 text-rustic-950 font-rusticText font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-amber-500/30 flex items-center space-x-2 transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer border border-amber-300";
+
+            displayFeedback(isCorrect, currentQ);
+        }
+
+        function displayFeedback(isCorrect, q) {
+            feedbackPanel.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedbackPanel.className = "mt-6 p-5 sm:p-6 rounded-2xl border-2 transition-all duration-300 bg-emerald-950/40 border-emerald-500/60";
+                feedbackIcon.className = "w-10 h-10 rounded-full bg-emerald-500 text-rustic-950 flex items-center justify-center text-xl font-bold shadow-lg shadow-emerald-500/20";
+                feedbackIcon.innerHTML = `<i class="fa-solid fa-check"></i>`;
+                feedbackTitle.innerText = "Resposta Correta! Raciocínio Perfeito!";
+                feedbackTitle.className = "text-base sm:text-lg font-bold font-rusticText text-emerald-400";
+                feedbackSubtitle.innerText = "Acompanhe a simulação visual até a parada no valor/destino exato:";
+
+                visualDemoBox.classList.remove('hidden');
+                visualText.innerText = `Demonstração Visual: O deslocamento atinge o valor do enunciado e para em tempo real.`;
+                startDestinationAnimation(q.visualType, q.exactData);
+            } else {
+                feedbackPanel.className = "mt-6 p-5 sm:p-6 rounded-2xl border-2 transition-all duration-300 bg-rose-950/40 border-rose-500/60";
+                feedbackIcon.className = "w-10 h-10 rounded-full bg-rose-500 text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-rose-500/20";
+                feedbackIcon.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+                feedbackTitle.innerText = "Resposta Incorreta!";
+                feedbackTitle.className = "text-base sm:text-lg font-bold font-rusticText text-rose-400";
+                feedbackSubtitle.innerText = "Veja abaixo a resolução com os números do enunciado:";
+
+                stepByStepBox.classList.remove('hidden');
+                stepByStepContent.innerHTML = q.steps.map(step => `
+                    <div class="p-2.5 bg-amber-100/90 rounded-lg border-l-4 border-amber-800 text-rustic-950">${step}</div>
+                `).join('');
+
+                visualDemoBox.classList.remove('hidden');
+                visualText.innerText = `Demonstração Visual Proporcional:`;
+                startDestinationAnimation(q.visualType, q.exactData);
+            }
+        }
+
+        function replayCurrentAnimation() {
+            const currentQ = currentRoundQueue[currentIndex];
+            if (currentQ) {
+                startDestinationAnimation(currentQ.visualType, currentQ.exactData);
+            }
+        }
+
+        function startDestinationAnimation(type, data) {
+            stopCurrentAnimation();
+            const ctx = demoCanvas.getContext('2d');
+            
+            const animDuration = 3200; 
+            let startTime = null;
+
+            function renderFrame(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                
+                animationProgress = Math.min(1.0, elapsed / animDuration);
+                
+                const w = demoCanvas.width = demoCanvas.parentElement.clientWidth;
+                const h = demoCanvas.height = demoCanvas.parentElement.clientHeight;
+
+                ctx.clearRect(0, 0, w, h);
+
+                if (animationProgress < 1.0) {
+                    animStatusIcon.className = "fa-solid fa-circle-play text-amber-400 animate-pulse";
+                    animStatusTitle.innerText = "Simulando até o destino...";
+                } else {
+                    animStatusIcon.className = "fa-solid fa-flag-checkered text-emerald-400";
+                    animStatusTitle.innerText = "VALOR FINAL ATINGIDO (Objeto Parado)";
+                }
+
+                if (type === 'VELOCITY_ANIMATED') {
+                    // VELOCIDADE MÉDIA: Carro andará até o destino final
+                    const roadY = h * 0.65;
+                    const margin = 50;
+                    const trackWidth = w - margin * 2;
+
+                    // Asfalto Rústico
+                    ctx.fillStyle = '#270e02';
+                    ctx.fillRect(margin - 10, roadY - 5, trackWidth + 20, 30);
+                    ctx.strokeStyle = '#fbbf24';
+                    ctx.setLineDash([14, 10]);
+                    ctx.beginPath();
+                    ctx.moveTo(margin - 10, roadY + 10);
+                    ctx.lineTo(margin + trackWidth + 10, roadY + 10);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+
+                    // Ponto Inicial (0 km)
+                    ctx.fillStyle = '#fcd34d';
+                    ctx.beginPath();
+                    ctx.arc(margin, roadY + 10, 6, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.font = 'bold 11px Fira Code';
+                    ctx.fillText('0 km', margin - 15, roadY + 36);
+
+                    // Ponto Final
+                    const isArrived = animationProgress >= 1.0;
+                    ctx.fillStyle = isArrived ? '#10b981' : '#f43f5e';
+                    ctx.beginPath();
+                    ctx.arc(margin + trackWidth, roadY + 10, 8, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.font = 'bold 12px Fira Code';
+                    ctx.fillText(`${data.dist} ${data.unitDist}`, margin + trackWidth - 30, roadY + 36);
+
+                    // Veículo
+                    const carX = margin + trackWidth * animationProgress;
+                    const currentDist = (data.dist * animationProgress).toFixed(1);
+                    const currentTime = (data.time * animationProgress).toFixed(2);
+
+                    ctx.fillStyle = isArrived ? '#10b981' : '#d97706';
+                    ctx.fillRect(carX - 25, roadY - 18, 50, 16);
+                    ctx.fillStyle = '#fef3c7';
+                    ctx.fillRect(carX - 15, roadY - 26, 30, 10);
+                    
+                    // Rodas
+                    ctx.fillStyle = '#170701';
+                    ctx.beginPath();
+                    ctx.arc(carX - 15, roadY - 2, 5, 0, Math.PI * 2);
+                    ctx.arc(carX + 15, roadY - 2, 5, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Telemetria Digital
+                    ctx.fillStyle = '#170701';
+                    ctx.strokeStyle = isArrived ? '#10b981' : '#fbbf24';
+                    ctx.lineWidth = 2;
+                    ctx.fillRect(w * 0.1, 12, w * 0.8, 54);
+                    ctx.strokeRect(w * 0.1, 12, w * 0.8, 54);
+
+                    ctx.fillStyle = '#fbbf24';
+                    ctx.font = 'bold 13px Outfit';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`${data.label}: v_m = ${data.speed} ${data.unitSpeed}`, w * 0.5, 30);
+                    
+                    ctx.fillStyle = isArrived ? '#10b981' : '#fde68a';
+                    ctx.font = 'bold 12px Fira Code';
+                    ctx.fillText(`Δs = ${currentDist} / ${data.dist} ${data.unitDist}  |  Δt = ${currentTime} / ${data.time} ${data.unitTime}`, w * 0.5, 52);
+
+                } else if (type === 'RATIO_ANIMATED') {
+                    // GRANDEZA POR RAZÃO: Nível dos Recipientes
+                    const boxW = Math.min(200, w * 0.35);
+                    const boxH = 110;
+                    ctx.textAlign = 'center';
+
+                    // Frasco A
+                    ctx.fillStyle = '#170701';
+                    ctx.strokeStyle = '#fbbf24';
+                    ctx.lineWidth = 2;
+                    ctx.fillRect(w * 0.25 - boxW/2, 40, boxW, boxH);
+                    ctx.strokeRect(w * 0.25 - boxW/2, 40, boxW, boxH);
+
+                    const fluidH1 = boxH * animationProgress;
+                    ctx.fillStyle = 'rgba(251, 191, 36, 0.35)';
+                    ctx.fillRect(w * 0.25 - boxW/2, 40 + boxH - fluidH1, boxW, fluidH1);
+
+                    ctx.fillStyle = '#fbbf24';
+                    ctx.font = 'bold 12px Outfit';
+                    ctx.fillText(data.labelA, w * 0.25, 30);
+                    ctx.font = 'bold 14px Fira Code';
+                    ctx.fillText((data.valA * animationProgress).toFixed(0), w * 0.25, 40 + boxH / 2);
+
+                    // Sinal de Divisão
+                    ctx.fillStyle = '#fde68a';
+                    ctx.font = 'bold 24px Outfit';
+                    ctx.fillText('÷', w * 0.5, 40 + boxH / 2);
+
+                    // Frasco B
+                    ctx.fillStyle = '#170701';
+                    ctx.strokeStyle = '#d97706';
+                    ctx.fillRect(w * 0.75 - boxW/2, 40, boxW, boxH);
+                    ctx.strokeRect(w * 0.75 - boxW/2, 40, boxW, boxH);
+
+                    const fluidH2 = boxH * animationProgress;
+                    ctx.fillStyle = 'rgba(217, 119, 6, 0.4)';
+                    ctx.fillRect(w * 0.75 - boxW/2, 40 + boxH - fluidH2, boxW, fluidH2);
+
+                    ctx.fillStyle = '#f59e0b';
+                    ctx.font = 'bold 12px Outfit';
+                    ctx.fillText(data.labelB, w * 0.75, 30);
+                    ctx.font = 'bold 14px Fira Code';
+                    ctx.fillText((data.valB * animationProgress).toFixed(1), w * 0.75, 40 + boxH / 2);
+
+                    ctx.fillStyle = animationProgress >= 1.0 ? '#10b981' : '#fcd34d';
+                    ctx.font = 'bold 15px Outfit';
+                    ctx.fillText(`RAZÃO RESULTANTE = ${(data.result * animationProgress).toFixed(1)} ${data.resultUnit}`, w * 0.5, h - 18);
+
+                } else if (type === 'PRODUCT_ANIMATED') {
+                    // GRANDEZA POR PRODUTO: Expansão de Área
+                    const maxRectW = w * 0.5;
+                    const maxRectH = h * 0.45;
+                    const curW = Math.max(20, maxRectW * animationProgress);
+                    const curH = Math.max(15, maxRectH * animationProgress);
+
+                    const startX = (w - curW) / 2;
+                    const startY = (h - curH) / 2;
+
+                    ctx.fillStyle = 'rgba(180, 83, 9, 0.35)';
+                    ctx.strokeStyle = '#f59e0b';
+                    ctx.lineWidth = 2.5;
+                    ctx.fillRect(startX, startY, curW, curH);
+                    ctx.strokeRect(startX, startY, curW, curH);
+
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = '#fde68a';
+                    ctx.font = 'bold 12px Fira Code';
+                    ctx.fillText(`${data.labelA}: ${(data.valA * animationProgress).toFixed(1)}`, w * 0.5, startY - 8);
+
+                    ctx.save();
+                    ctx.translate(startX - 15, startY + curH / 2);
+                    ctx.rotate(-Math.PI / 2);
+                    ctx.fillText(`${data.labelB}: ${(data.valB * animationProgress).toFixed(1)}`, 0, 0);
+                    ctx.restore();
+
+                    ctx.fillStyle = animationProgress >= 1.0 ? '#10b981' : '#fbbf24';
+                    ctx.font = 'bold 14px Fira Code';
+                    ctx.fillText(`PRODUTO ACUMULADO`, w * 0.5, startY + curH / 2 - 6);
+                    ctx.fillText(`${(data.result * animationProgress).toFixed(1)} ${data.resultUnit}`, w * 0.5, startY + curH / 2 + 14);
+
+                } else if (type === 'RULE3_SIMP_ANIMATED') {
+                    // REGRA DE TRÊS SIMPLES: Barras Proporcionais
+                    ctx.textAlign = 'center';
+                    const maxH = 100;
+
+                    const h1_a = maxH * 0.6;
+                    const h1_b = maxH * (data.a2 / data.a1) * 0.6;
+
+                    const h2_a = maxH * 0.6;
+                    const factor = data.isInverse ? (data.b1 / data.b2) : (data.b2 / data.b1);
+                    const h2_b = maxH * factor * 0.6;
+
+                    ctx.fillStyle = '#fbbf24';
+                    ctx.fillRect(w * 0.25 - 25, h * 0.65 - h1_b * animationProgress, 20, h1_b * animationProgress);
+                    ctx.fillStyle = '#78350f';
+                    ctx.fillRect(w * 0.25 + 5, h * 0.65 - h1_a, 20, h1_a);
+
+                    ctx.fillStyle = '#d97706';
+                    ctx.fillRect(w * 0.75 - 25, h * 0.65 - h2_b * animationProgress, 20, h2_b * animationProgress);
+                    ctx.fillStyle = '#78350f';
+                    ctx.fillRect(w * 0.75 + 5, h * 0.65 - h2_a, 20, h2_a);
+
+                    ctx.fillStyle = '#fbbf24';
+                    ctx.font = 'bold 13px Outfit';
+                    ctx.fillText(`${data.g1Name}: ${data.a1} ➔ ${data.a2}`, w * 0.25, 30);
+
+                    ctx.fillStyle = '#d97706';
+                    ctx.fillText(`${data.g2Name}: ${data.b1} ➔ ${data.b2}`, w * 0.75, 30);
+
+                    if (data.isInverse) {
+                        ctx.fillStyle = '#f43f5e';
+                        ctx.fillText('⚡ INVERSAMENTE PROPORCIONAIS', w * 0.5, h - 18);
+                    } else {
+                        ctx.fillStyle = '#10b981';
+                        ctx.fillText('➔ DIRETAMENTE PROPORCIONAIS', w * 0.5, h - 18);
+                    }
+
+                } else if (type === 'RULE3_COMP_ANIMATED') {
+                    // REGRA DE TRÊS COMPOSTA: 3 Colunas de Proporção
+                    const colW = (w - 60) / 3;
+                    ctx.textAlign = 'center';
+
+                    // Coluna 1
+                    ctx.fillStyle = '#170701';
+                    ctx.strokeStyle = '#b45309';
+                    ctx.fillRect(20, 20, colW, h - 50);
+                    ctx.strokeRect(20, 20, colW, h - 50);
+                    ctx.fillStyle = '#fcd34d';
+                    ctx.font = 'bold 12px Outfit';
+                    ctx.fillText(data.g1Name, 20 + colW / 2, 40);
+                    ctx.font = '13px Fira Code';
+                    ctx.fillStyle = '#fef3c7';
+                    ctx.fillText(`${data.g1v1} ➔ ${data.g1v2}`, 20 + colW / 2, 75);
+                    ctx.fillStyle = '#b45309';
+                    ctx.fillRect(20 + 10, h - 60 - (data.g1v2 / data.g1v1 * 20 * animationProgress), colW - 20, data.g1v2 / data.g1v1 * 20 * animationProgress);
+
+                    // Coluna 2
+                    ctx.fillStyle = '#170701';
+                    ctx.strokeStyle = '#d97706';
+                    ctx.fillRect(30 + colW, 20, colW, h - 50);
+                    ctx.strokeRect(30 + colW, 20, colW, h - 50);
+                    ctx.fillStyle = '#fcd34d';
+                    ctx.font = 'bold 12px Outfit';
+                    ctx.fillText(data.g2Name, 30 + colW + colW / 2, 40);
+                    ctx.font = '13px Fira Code';
+                    ctx.fillStyle = '#fef3c7';
+                    ctx.fillText(`${data.g2v1} ➔ ${data.g2v2}`, 30 + colW + colW / 2, 75);
+                    ctx.fillStyle = '#d97706';
+                    ctx.fillRect(30 + colW + 10, h - 60 - (data.g2v2 / data.g2v1 * 20 * animationProgress), colW - 20, data.g2v2 / data.g2v1 * 20 * animationProgress);
+
+                    // Coluna 3
+                    ctx.fillStyle = '#170701';
+                    ctx.strokeStyle = '#10b981';
+                    ctx.fillRect(40 + colW * 2, 20, colW, h - 50);
+                    ctx.strokeRect(40 + colW * 2, 20, colW, h - 50);
+                    ctx.fillStyle = '#34d399';
+                    ctx.font = 'bold 12px Outfit';
+                    ctx.fillText(data.g3Name, 40 + colW * 2 + colW / 2, 40);
+                    ctx.font = 'bold 13px Fira Code';
+                    ctx.fillStyle = '#10b981';
+                    ctx.fillText(`${data.g3v1} ➔ ${data.g3v2}`, 40 + colW * 2 + colW / 2, 75);
+                    ctx.fillStyle = '#10b981';
+                    ctx.fillRect(40 + colW * 2 + 10, h - 60 - (data.g3v2 / data.g3v1 * 20 * animationProgress), colW - 20, data.g3v2 / data.g3v1 * 20 * animationProgress);
+
+                    ctx.fillStyle = animationProgress >= 1.0 ? '#10b981' : '#fcd34d';
+                    ctx.font = 'bold 11px Outfit';
+                    ctx.fillText('⚡ Proporcionalidade Composta Concluída', w * 0.5, h - 12);
+                }
+
+                if (animationProgress < 1.0) {
+                    animationFrameId = requestAnimationFrame(renderFrame);
+                } else {
+                    animationFrameId = null;
+                }
+            }
+
+            animationFrameId = requestAnimationFrame(renderFrame);
+        }
+
+        function nextQuestion() {
+            if (!optionSelected) return;
+
+            currentIndex++;
+            if (currentIndex < currentRoundQueue.length) {
+                loadQuestion();
+            } else {
+                alert(`🎉 PARABÉNS! VOCÊ COMPLETOU A RODADA SELECIONADA DE MATEMÁTICA!\n\nEscola: E.E. Francisco Cristiano Lima de Freitas\nPontuação Final: ${score} pontos\nPrecisão: ${Math.round((correctAnswers / totalAnswered) * 100)}%`);
+                initRound();
+                loadQuestion();
+            }
+        }
+
+        window.onload = function() {
+            initRound();
+            loadQuestion();
+        };
+    </script>
+</body>
+</html>
